@@ -8,12 +8,14 @@ import fetchMovies from '../../REDUX/actions/fetchMovies';
 export class SearchForm extends Component {
 
     handleChange = (e) =>{
+        debugger
         this.props.updateSearchData(e.target.value);
     }
 
     handleClick = (e) =>{
         e.preventDefault();
         this.props.fetchSearchData(this.props.data)
+        this.props.loadingChange()
     }
 
     render() {
@@ -43,7 +45,8 @@ export class SearchForm extends Component {
 
 const mapStateToProps = state =>{
     return{
-        data: state.searchMovie.text
+        data: state.searchMovie.text,
+        loading: state.searchMovie.loading
     }
 }
 
@@ -51,7 +54,8 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch) => {
     return{
         updateSearchData : text => {dispatch(actionUpdateSearch(text))},
-        fetchSearchData: text =>{dispatch(fetchMovies(text))}
+        fetchSearchData: text =>{dispatch(fetchMovies(text))},
+        loadingChange: () =>{dispatch({type: 'LOADING_CHANGE'})}
     }
 }
 

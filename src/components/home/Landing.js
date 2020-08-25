@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import SearchForm from './searchForm'
 import { connect } from 'react-redux';
 import MovieContainer from './movieContainer';
-import Spinner from './../layout/Spinner';
+import Spinner from '../layout/Spinner';
+// import Spinner from './../layout/Spinner';
 
 
 
@@ -13,7 +14,7 @@ export class Landing extends Component {
             <div className="container">
                 <SearchForm />
                {
-                   this.props.data.loading ? <Spinner /> : <MovieContainer />
+                   this.props.loading ? <Spinner /> : <MovieContainer />
                }
             </div>
         )
@@ -22,7 +23,7 @@ export class Landing extends Component {
 
 const mapStateToProps = (state) =>{
     return{
-        data: state.searchMovie
+        loading: state.searchMovie.loading
     }
 }
 

@@ -7,10 +7,15 @@ export class MovieContainer extends Component {
         
         const {movies} = this.props;
 
-        let content = movies ? movies.map((movie,index)=><MovieCard key = {index} postersource = {movie.Poster} movietitle = {movie.Title} movieyear = {movie.Year}/>) : null
+        let content = movies ? movies.map((movie,index)=><MovieCard 
+        key = {index}
+        movieID = {movie.imdbID}
+        postersource = {movie.Poster}
+        movietitle = {movie.Title} 
+        movieyear = {movie.Year}/>) : null
 
         return (
-            <div className="row">
+            <div className="row p-4">
                 {content}
             </div>
         )
