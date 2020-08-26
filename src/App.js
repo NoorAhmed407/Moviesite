@@ -2,8 +2,9 @@ import React from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { Movie } from './components/home/movie';
-import { Landing } from './components/home/Landing';
+import Landing from './components/home/Landing';
+import Movie from './components/home/movie';
+
 
 function App() {
   return (

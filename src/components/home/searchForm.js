@@ -8,7 +8,6 @@ import fetchMovies from '../../REDUX/actions/fetchMovies';
 export class SearchForm extends Component {
 
     handleChange = (e) =>{
-        debugger
         this.props.updateSearchData(e.target.value);
     }
 

@@ -3,7 +3,6 @@ import SearchForm from './searchForm'
 import { connect } from 'react-redux';
 import MovieContainer from './movieContainer';
 import Spinner from '../layout/Spinner';
-// import Spinner from './../layout/Spinner';
 
 
 
