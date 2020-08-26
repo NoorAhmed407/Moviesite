@@ -9,30 +9,55 @@ export class Movie extends Component {
     }
     
     render() {
-        console.log(this.props)
+        const {loadingstate, singleMovie} = this.props;
         return (
-            <div>
-                <div className="card mb-3">
+            <div className="container text-center">
+                <div className="card m-5 d-inline-block">
                     <div className="row no-gutters">
                         <div className="col-md-5">
                         <img  
-                        src = {this.props.singleMovie.Poster}
-                        className="card-img" 
+                        src = {singleMovie.Poster}
+                        className="card-img img-fluid" 
                         alt="..." />
                         </div>
                         <div className="col-md-7">
-                        <div className="card-body">
-                            <h5 className="card-title">Hello</h5>
-                            <p className="card-text"></p>
-                            <p className="card-text"><small className="text-muted"></small></p>
-                        </div>
+                            <div className="card-body text-center py-4">
+                                <h3>Movie details</h3>
+                                <table className="table table-hover p-4">
+                                    <tr>
+                                        <td>Tiltle</td>
+                                        <td>{singleMovie.Title}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year</td>
+                                        <td>{singleMovie.Year}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rated</td>
+                                        <td>{singleMovie.Rated}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Released</td>
+                                        <td>{singleMovie.Released}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Genre</td>
+                                        <td>{singleMovie.Genre}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Language</td>
+                                        <td>{singleMovie.Language}</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                    </div>
+                 </div>
             </div>
         )
     }
 }
+
 
 const mapStateToProps = state =>{
     return{

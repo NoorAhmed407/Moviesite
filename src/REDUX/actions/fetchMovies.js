@@ -14,12 +14,6 @@ const fetchMovies = (name) =>{
             })
             )
             .catch(error =>console.log(error));
-            
-            // fetch(`http://www.omdbapi.com/?apikey=${APIKEY}&s=${name}`)
-            // .then(response => response.json())
-            // .then(json => {
-            //     dispatch({type: 'FETCH_MOVIES', payload: json})
-            // })
     }
 }
 
